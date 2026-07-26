@@ -1,0 +1,31 @@
+{
+  "name": "झूलेलाल मंदिर — श्री झूलेलाल अखण्ड ज्योति ट्रस्ट, रामबाग कानपुर",
+  "short_name": "झूलेलाल मंदिर",
+  "description": "श्री झूलेलाल अखण्ड ज्योति ट्रस्ट, रामबाग कानपुर — आरती, वरुण चालीसा, गुज्जी देह की विधि और आध्यात्मिक नोट्स। हिंदी और सिंधी में।",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff8ec",
+  "theme_color": "#B3541E",
+  "lang": "hi",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

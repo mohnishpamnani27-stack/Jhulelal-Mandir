@@ -1,0 +1,434 @@
+/* ===================================================================
+   Jhulelal Mandir PWA — Global styles
+   Theme: warm saffron & deep water-blue (Jhulelal is the water deity),
+   large type and big touch targets so elders can use it comfortably.
+   =================================================================== */
+
+:root {
+  --saffron: #e8590c;
+  --saffron-deep: #b3541e;
+  --gold: #f2b705;
+  --gold-soft: #fbe4a2;
+  --water: #14532d;
+  --blue: #0e5a8a;
+  --blue-deep: #0a3d5c;
+  --cream: #fff8ec;
+  --cream-2: #fdf1d9;
+  --ink: #3b2313;
+  --ink-soft: #6b4a2f;
+  --white: #ffffff;
+
+  /* user-adjustable via the A− / A+ buttons */
+  --scale: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: calc(17px * var(--scale));
+}
+
+body {
+  font-family: 'Noto Sans Devanagari', 'Segoe UI', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+}
+
+.app-bg {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background:
+    radial-gradient(ellipse 80% 40% at 50% -5%, rgba(242, 183, 5, 0.35), transparent 60%),
+    linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%);
+}
+
+/* ---------- Header ---------- */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: linear-gradient(135deg, var(--saffron-deep) 0%, var(--saffron) 55%, #d97706 100%);
+  color: var(--white);
+  padding: 0.6rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 2px 12px rgba(179, 84, 30, 0.35);
+}
+
+.header .back-btn {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--white);
+  border-radius: 12px;
+  min-width: 48px;
+  min-height: 48px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.header h1 {
+  flex: 1;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.header .header-sub {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.92;
+}
+
+.pill-btn {
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  min-height: 44px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.pill-btn:active {
+  transform: scale(0.96);
+}
+
+.font-controls {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.font-controls .pill-btn {
+  min-width: 44px;
+  padding: 0.45rem 0.55rem;
+}
+
+/* ---------- Hero (home page) ---------- */
+
+.hero {
+  text-align: center;
+  padding: 1.6rem 1rem 1.1rem;
+}
+
+/* Trust name banner — maroon & gold, echoing the trust's own banner */
+.trust-banner {
+  display: inline-block;
+  margin: 0 auto 1.2rem;
+  padding: 0.55rem 1.3rem 0.6rem;
+  background: linear-gradient(180deg, #7a1220 0%, #59080f 100%);
+  color: var(--gold);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.4;
+  border-radius: 14px;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 14px rgba(89, 8, 15, 0.35);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.trust-banner .trust-place {
+  display: block;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #ffe9a8;
+}
+
+.hero .deity-frame {
+  position: relative;
+  width: min(46vw, 190px);
+  aspect-ratio: 1;
+  margin: 0 auto 0.9rem;
+  border-radius: 50%;
+  padding: 6px;
+  background: conic-gradient(var(--gold), var(--saffron), var(--gold), var(--saffron), var(--gold));
+  box-shadow: 0 6px 26px rgba(232, 89, 12, 0.3);
+}
+
+/* animated halo — opacity-only animation composites on the GPU,
+   so it stays smooth even on older phones */
+.hero .deity-frame::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242, 183, 5, 0.55), transparent 70%);
+  z-index: -1;
+  animation: glow 3.5s ease-in-out infinite;
+}
+
+.hero .deity-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  background: var(--blue-deep);
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
+
+.hero .jai-line {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 1.55rem;
+  color: var(--saffron-deep);
+  font-weight: 700;
+}
+
+.hero .welcome-line {
+  margin-top: 0.25rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------- Feature grid ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  padding: 0.4rem 1rem 1.2rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  text-align: center;
+  background: var(--white);
+  border: 2px solid var(--gold-soft);
+  border-radius: 22px;
+  padding: 1.15rem 0.8rem;
+  min-height: 132px;
+  box-shadow: 0 4px 14px rgba(179, 84, 30, 0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.feature-card:active {
+  transform: scale(0.97);
+}
+
+.feature-card .icon {
+  font-size: 2.1rem;
+  line-height: 1;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--gold-soft), #fff3d6);
+  box-shadow: inset 0 0 0 2px rgba(242, 183, 5, 0.5);
+}
+
+.feature-card .label {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.3;
+}
+
+.feature-card .label-sub {
+  display: block;
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+/* ---------- Reader page ---------- */
+
+.reader {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.1rem 1rem 3rem;
+}
+
+.reader .scripture-title {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  text-align: center;
+  color: var(--saffron-deep);
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.reader .scripture-deco {
+  text-align: center;
+  color: var(--gold);
+  letter-spacing: 0.4em;
+  margin-bottom: 1rem;
+}
+
+.verse-card {
+  background: var(--white);
+  border: 1.5px solid var(--gold-soft);
+  border-left: 5px solid var(--saffron);
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 3px 10px rgba(179, 84, 30, 0.08);
+}
+
+.verse-card p {
+  font-size: 1.12rem;
+  line-height: 2.05;
+  white-space: pre-line;
+}
+
+.verse-card.note {
+  background: linear-gradient(145deg, #fff3d6, var(--gold-soft));
+  border-left-color: var(--gold);
+}
+
+.verse-card.note p {
+  line-height: 1.9;
+  color: var(--saffron-deep);
+  font-weight: 600;
+  text-align: center;
+}
+
+.section-heading {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  color: var(--blue-deep);
+  font-size: 1.2rem;
+  margin: 1.3rem 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px dashed var(--gold);
+}
+
+/* Trust credit at the foot of every scripture page */
+.trust-credit {
+  text-align: center;
+  margin-top: 0.4rem;
+  font-family: 'Tiro Devanagari Hindi', serif;
+  color: var(--saffron-deep);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.trust-credit span {
+  display: block;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+}
+
+/* ---------- Devotional images (golden frame, like the posters) ---------- */
+
+.holy-figure {
+  margin: 1.1rem auto;
+  max-width: 420px;
+  text-align: center;
+}
+
+.holy-frame {
+  position: relative;
+  padding: 7px;
+  border-radius: 20px;
+  background:
+    linear-gradient(140deg, #f9d976 0%, #b8860b 22%, #ffe9a8 45%, #b8860b 72%, #f9d976 100%);
+  box-shadow:
+    0 6px 22px rgba(122, 56, 20, 0.35),
+    inset 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+.holy-frame::after {
+  /* inner gold pinline, like the poster frames */
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1.5px solid rgba(255, 246, 201, 0.85);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.holy-frame img {
+  display: block;
+  width: 100%;
+  border-radius: 14px;
+}
+
+.holy-figure figcaption {
+  margin-top: 0.5rem;
+  font-family: 'Tiro Devanagari Hindi', serif;
+  color: var(--saffron-deep);
+  font-size: 0.95rem;
+}
+
+/* ---------- Install banner ---------- */
+
+.install-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  width: min(92vw, 460px);
+  background: var(--blue-deep);
+  color: var(--white);
+  border-radius: 18px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  z-index: 50;
+}
+
+.install-banner p {
+  flex: 1;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.install-banner .pill-btn {
+  white-space: nowrap;
+}
+
+.install-banner .close-x {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.4rem;
+  min-width: 40px;
+  min-height: 40px;
+  cursor: pointer;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  text-align: center;
+  padding: 1.2rem 1rem 2rem;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+@media (min-width: 700px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
