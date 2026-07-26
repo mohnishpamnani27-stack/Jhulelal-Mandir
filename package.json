@@ -1,0 +1,24 @@
+{
+  "name": "jhulelal-mandir-pwa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jhulelal Mandir - Progressive Web App (Aarti, Varun Chalisa, Gujji Deh ki Vidhi, Spiritual Notes)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "icons": "node scripts/generate-icons.mjs",
+    "icons:image": "node scripts/icon-from-image.mjs",
+    "crop": "node scripts/crop-vidhi.mjs",
+    "crop:posters": "node scripts/crop-posters.mjs"
+  },
+  "dependencies": {
+    "next": "^15.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@imgly/background-removal-node": "^1.4.5",
+    "sharp": "^0.34.5"
+  }
+}
