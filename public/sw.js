@@ -5,7 +5,7 @@
 // Bump CACHE_VERSION whenever you change the texts significantly.
 // =====================================================================
 
-const CACHE_VERSION = 'mandir-v7';
+const CACHE_VERSION = 'mandir-v8';
 
 const PRECACHE_URLS = [
   '/',

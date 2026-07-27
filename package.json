@@ -9,6 +9,7 @@
     "start": "next start",
     "icons": "node scripts/generate-icons.mjs",
     "icons:image": "node scripts/icon-from-image.mjs",
+    "icons:poster": "node scripts/icon-from-poster.mjs",
     "crop": "node scripts/crop-vidhi.mjs",
     "crop:posters": "node scripts/crop-posters.mjs"
   },
