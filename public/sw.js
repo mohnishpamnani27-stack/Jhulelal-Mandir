@@ -5,10 +5,11 @@
 // Bump CACHE_VERSION whenever you change the texts significantly.
 // =====================================================================
 
-const CACHE_VERSION = 'mandir-v8';
+const CACHE_VERSION = 'mandir-v9';
 
 const PRECACHE_URLS = [
   '/',
+  '/history',
   '/aarti-baba',
   '/aarti-sai',
   '/aarti-hinglaj',

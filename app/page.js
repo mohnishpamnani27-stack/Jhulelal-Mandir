@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import InstallPrompt from '@/components/InstallPrompt';
 import { useLanguage } from '@/lib/LanguageContext';
 import { content, featureOrder, ui } from '@/lib/content';
+import { templeHistory, varunDevtaBiography } from '@/lib/history';
 
 // Home page — every feature is one tap away, exactly as elders need.
 export default function Home() {
@@ -28,6 +29,22 @@ export default function Home() {
         </section>
 
         <nav className="grid" aria-label="Features">
+          <Link href={`/${templeHistory.id}`} className="feature-card feature-card-history" lang="hi">
+            <span className="icon" aria-hidden="true">{templeHistory.icon}</span>
+            <span className="label">
+              {templeHistory.title}
+              <span className="label-sub">{templeHistory.subtitle}</span>
+            </span>
+            <span className="history-card-arrow" aria-hidden="true">→</span>
+          </Link>
+          <Link href={`/${varunDevtaBiography.id}`} className="feature-card feature-card-history" lang="hi">
+            <span className="icon" aria-hidden="true">{varunDevtaBiography.icon}</span>
+            <span className="label">
+              {varunDevtaBiography.title}
+              <span className="label-sub">{varunDevtaBiography.subtitle}</span>
+            </span>
+            <span className="history-card-arrow" aria-hidden="true">→</span>
+          </Link>
           {featureOrder.map((key) => {
             const item = content[key];
             return (
