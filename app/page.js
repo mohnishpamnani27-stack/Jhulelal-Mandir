@@ -30,7 +30,7 @@ export default function Home() {
 
         <nav className="grid" aria-label="Features">
           <Link href={`/${templeHistory.id}`} className="feature-card feature-card-history" lang="hi">
-            <span className="icon" aria-hidden="true">{templeHistory.icon}</span>
+            <img src="/mandir-itihas.jpg" alt="" className="history-card-img" aria-hidden="true" />
             <span className="label">
               {templeHistory.title}
               <span className="label-sub">{templeHistory.subtitle}</span>
@@ -49,7 +49,11 @@ export default function Home() {
             const item = content[key];
             return (
               <Link key={key} href={`/${item.id}`} className="feature-card">
-                <span className="icon" aria-hidden="true">{item.icon}</span>
+                {key === 'vidhi' ? (
+                  <img src="/vidhi/patila.jpg" alt="" className="icon icon-img" aria-hidden="true" />
+                ) : (
+                  <span className="icon" aria-hidden="true">{item.icon}</span>
+                )}
                 <span className="label">
                   {item.title[lang]}
                   <span className="label-sub">{item.subtitle[lang]}</span>

@@ -9,6 +9,9 @@ export default function TempleHistory({ biography = templeHistory, closingMessag
     <>
       <Header title={biography.title} showBack />
       <main className="history-page" lang="hi">
+        <div className="history-top-image">
+          <img src="/mandir-itihas.jpg" alt="झूलेलाल मंदिर — संस्थापक प्रतिमा" />
+        </div>
         <section className="history-hero" aria-labelledby="history-title">
           <div className="history-emblem" aria-hidden="true">
             {emblem}
